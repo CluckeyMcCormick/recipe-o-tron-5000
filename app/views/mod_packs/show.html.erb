@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mod_pack.name %>
+</p>
+
+<p>
+  <strong>Mods:</strong>
+  <%= @mod_pack.mods %>
+</p>
+
+<%= link_to 'Edit', edit_mod_pack_path(@mod_pack) %> |
+<%= link_to 'Back', mod_packs_path %>

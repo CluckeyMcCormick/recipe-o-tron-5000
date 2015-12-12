@@ -69,18 +69,18 @@ echo "		process_types, belongs_to"
 
 echo "<--------[ Generating... ]-------->"
 echo "Generating MOD_PACK..."
-rails g model MOD_PACK name:string mods:references -f
+rails g model mod_pack name:string mods:references -f
 echo "Generating MOD..."
-rails g model MOD name:string items:references -f
+rails g model mod name:string items:references -f
 echo "Generating ITEM..."
-rails g model ITEM name:string basic_item:boolean -f
+rails g model item name:string basic_item:boolean -f
 echo "Generating RECIPE..."
-rails g model RECIPE preferred_recipe:boolean mod_packs:references -f
+rails g model recipe preferred_recipe:boolean mod_packs:references -f
 echo "Generating INPUT_QUANTITY..."
-rails g model INPUT_QUANTITY count:integer recipe:references item:reference -f
+rails g model input_quantity count:integer recipe:references item:references -f
 echo "Generating OUTPUT_QUANTITY..."
-rails g model OUTPUT_QUANTITY count:integer recipe:references item:reference -f
+rails g model output_quantities count:integer recipe:references item:references -f
 echo "Generating PROCESS_TYPE..."
-rails g model PROCESS_TYPE name:string description:text item_classes:references -f
+rails g model process_type name:string description:text item_classes:references -f
 echo "Generating ITEM_CLASS..."
-rails g model ITEM_CLASS name:string -f
+rails g model item_class name:string -f

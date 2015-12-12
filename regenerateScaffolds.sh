@@ -69,18 +69,18 @@ echo "		process_types, belongs_to"
 
 echo "<--------[ Generating... ]-------->"
 echo "Generating MOD_PACK..."
-rails g scaffold MOD_PACK name:string mods:references -f
+rails g scaffold mod_pack name:string mods:references -f
 echo "Generating MOD..."
-rails g scaffold MOD name:string items:references -f
+rails g scaffold mod name:string items:references -f
 echo "Generating ITEM..."
-rails g scaffold ITEM name:string basic_item:boolean -f
+rails g scaffold item name:string basic_item:boolean -f
 echo "Generating RECIPE..."
-rails g scaffold RECIPE preferred_recipe:boolean mod_packs:references -f
+rails g scaffold recipe preferred_recipe:boolean mod_packs:references -f
 echo "Generating INPUT_QUANTITY..."
-rails g scaffold INPUT_QUANTITY count:integer recipe:references item:reference -f
+rails g scaffold input_quantity count:integer recipe:references item:references -f
 echo "Generating OUTPUT_QUANTITY..."
-rails g scaffold OUTPUT_QUANTITY count:integer recipe:references item:reference -f
+rails g scaffold output_quantities count:integer recipe:references item:references -f
 echo "Generating PROCESS_TYPE..."
-rails g scaffold PROCESS_TYPE name:string description:text item_classes:references -f
+rails g scaffold process_type name:string description:text item_classes:references -f
 echo "Generating ITEM_CLASS..."
-rails g scaffold ITEM_CLASS name:string -f
+rails g scaffold item_class name:string -f

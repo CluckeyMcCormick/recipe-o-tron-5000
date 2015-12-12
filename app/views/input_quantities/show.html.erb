@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @input_quantity.count %>
+</p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @input_quantity.recipe %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @input_quantity.item %>
+</p>
+
+<%= link_to 'Edit', edit_input_quantity_path(@input_quantity) %> |
+<%= link_to 'Back', input_quantities_path %>
