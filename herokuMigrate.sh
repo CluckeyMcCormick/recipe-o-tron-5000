@@ -1,0 +1,1 @@
+heroku run --app serene-reaches-9115 rake db:migrate
