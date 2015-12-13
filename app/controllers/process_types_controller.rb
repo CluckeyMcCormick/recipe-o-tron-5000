@@ -69,6 +69,6 @@ class ProcessTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def process_type_params
-      params.require(:process_type).permit(:name, :description, :item_classes_id)
+      params.require(:process_type).permit(:name, :description)
     end
 end

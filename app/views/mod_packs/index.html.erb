@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Mods</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
     <% @mod_packs.each do |mod_pack| %>
       <tr>
         <td><%= mod_pack.name %></td>
-        <td><%= mod_pack.mods %></td>
         <td><%= link_to 'Show', mod_pack %></td>
         <td><%= link_to 'Edit', edit_mod_pack_path(mod_pack) %></td>
         <td><%= link_to 'Destroy', mod_pack, method: :delete, data: { confirm: 'Are you sure?' } %></td>

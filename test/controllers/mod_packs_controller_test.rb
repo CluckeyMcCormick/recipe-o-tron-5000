@@ -18,7 +18,7 @@ class ModPacksControllerTest < ActionController::TestCase
 
   test "should create mod_pack" do
     assert_difference('ModPack.count') do
-      post :create, mod_pack: { mods_id: @mod_pack.mods_id, name: @mod_pack.name }
+      post :create, mod_pack: { name: @mod_pack.name }
     end
 
     assert_redirected_to mod_pack_path(assigns(:mod_pack))
@@ -35,7 +35,7 @@ class ModPacksControllerTest < ActionController::TestCase
   end
 
   test "should update mod_pack" do
-    patch :update, id: @mod_pack, mod_pack: { mods_id: @mod_pack.mods_id, name: @mod_pack.name }
+    patch :update, id: @mod_pack, mod_pack: { name: @mod_pack.name }
     assert_redirected_to mod_pack_path(assigns(:mod_pack))
   end
 

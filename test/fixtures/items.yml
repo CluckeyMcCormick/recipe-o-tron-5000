@@ -3,7 +3,9 @@
 one:
   name: MyString
   basic_item: false
+  mods_id: 
 
 two:
   name: MyString
   basic_item: false
+  mods_id: 

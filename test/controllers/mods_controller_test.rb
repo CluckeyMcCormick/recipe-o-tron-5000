@@ -18,7 +18,7 @@ class ModsControllerTest < ActionController::TestCase
 
   test "should create mod" do
     assert_difference('Mod.count') do
-      post :create, mod: { items_id: @mod.items_id, name: @mod.name }
+      post :create, mod: { name: @mod.name }
     end
 
     assert_redirected_to mod_path(assigns(:mod))
@@ -35,7 +35,7 @@ class ModsControllerTest < ActionController::TestCase
   end
 
   test "should update mod" do
-    patch :update, id: @mod, mod: { items_id: @mod.items_id, name: @mod.name }
+    patch :update, id: @mod, mod: { name: @mod.name }
     assert_redirected_to mod_path(assigns(:mod))
   end
 

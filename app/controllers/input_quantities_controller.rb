@@ -69,6 +69,6 @@ class InputQuantitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def input_quantity_params
-      params.require(:input_quantity).permit(:count, :recipe_id, :item_id)
+      params.require(:input_quantity).permit(:count, :recipes_id, :items_id)
     end
 end

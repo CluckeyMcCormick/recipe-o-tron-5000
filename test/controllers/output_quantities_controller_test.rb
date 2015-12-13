@@ -18,7 +18,7 @@ class OutputQuantitiesControllerTest < ActionController::TestCase
 
   test "should create output_quantity" do
     assert_difference('OutputQuantity.count') do
-      post :create, output_quantity: { count: @output_quantity.count, item_id: @output_quantity.item_id, recipe_id: @output_quantity.recipe_id }
+      post :create, output_quantity: { count: @output_quantity.count, items_id: @output_quantity.items_id, recipes_id: @output_quantity.recipes_id }
     end
 
     assert_redirected_to output_quantity_path(assigns(:output_quantity))
@@ -35,7 +35,7 @@ class OutputQuantitiesControllerTest < ActionController::TestCase
   end
 
   test "should update output_quantity" do
-    patch :update, id: @output_quantity, output_quantity: { count: @output_quantity.count, item_id: @output_quantity.item_id, recipe_id: @output_quantity.recipe_id }
+    patch :update, id: @output_quantity, output_quantity: { count: @output_quantity.count, items_id: @output_quantity.items_id, recipes_id: @output_quantity.recipes_id }
     assert_redirected_to output_quantity_path(assigns(:output_quantity))
   end
 

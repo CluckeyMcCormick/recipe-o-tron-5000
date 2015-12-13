@@ -1,1 +1,1 @@
-json.extract! @mod_pack, :id, :name, :mods_id, :created_at, :updated_at
+json.extract! @mod_pack, :id, :name, :created_at, :updated_at

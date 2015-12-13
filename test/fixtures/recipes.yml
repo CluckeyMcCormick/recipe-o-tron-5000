@@ -2,8 +2,8 @@
 
 one:
   preferred_recipe: false
-  mod_packs_id: 
+  process_types_id: 
 
 two:
   preferred_recipe: false
-  mod_packs_id: 
+  process_types_id: 

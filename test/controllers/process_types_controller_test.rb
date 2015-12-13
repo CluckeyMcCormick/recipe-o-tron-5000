@@ -18,7 +18,7 @@ class ProcessTypesControllerTest < ActionController::TestCase
 
   test "should create process_type" do
     assert_difference('ProcessType.count') do
-      post :create, process_type: { description: @process_type.description, item_classes_id: @process_type.item_classes_id, name: @process_type.name }
+      post :create, process_type: { description: @process_type.description, name: @process_type.name }
     end
 
     assert_redirected_to process_type_path(assigns(:process_type))
@@ -35,7 +35,7 @@ class ProcessTypesControllerTest < ActionController::TestCase
   end
 
   test "should update process_type" do
-    patch :update, id: @process_type, process_type: { description: @process_type.description, item_classes_id: @process_type.item_classes_id, name: @process_type.name }
+    patch :update, id: @process_type, process_type: { description: @process_type.description, name: @process_type.name }
     assert_redirected_to process_type_path(assigns(:process_type))
   end
 

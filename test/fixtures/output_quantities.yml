@@ -2,10 +2,10 @@
 
 one:
   count: 1
-  recipe_id: 
-  item_id: 
+  recipes_id: 
+  items_id: 
 
 two:
   count: 1
-  recipe_id: 
-  item_id: 
+  recipes_id: 
+  items_id: 

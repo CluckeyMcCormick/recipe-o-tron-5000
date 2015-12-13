@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Count</th>
-      <th>Recipe</th>
-      <th>Item</th>
+      <th>Recipes</th>
+      <th>Items</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
     <% @input_quantities.each do |input_quantity| %>
       <tr>
         <td><%= input_quantity.count %></td>
-        <td><%= input_quantity.recipe %></td>
-        <td><%= input_quantity.item %></td>
+        <td><%= input_quantity.recipes %></td>
+        <td><%= input_quantity.items %></td>
         <td><%= link_to 'Show', input_quantity %></td>
         <td><%= link_to 'Edit', edit_input_quantity_path(input_quantity) %></td>
         <td><%= link_to 'Destroy', input_quantity, method: :delete, data: { confirm: 'Are you sure?' } %></td>

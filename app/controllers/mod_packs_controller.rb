@@ -69,6 +69,6 @@ class ModPacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mod_pack_params
-      params.require(:mod_pack).permit(:name, :mods_id)
+      params.require(:mod_pack).permit(:name)
     end
 end

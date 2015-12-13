@@ -15,6 +15,44 @@ Rails.application.routes.draw do
   resources :items
   resources :mods
   resources :mod_packs
+  resources :item_classes
+  resources :process_types
+  resources :output_quantities
+  resources :input_quantities
+  resources :recipes
+  resources :mods
+  resources :mod_packs
+  resources :item_classes
+  resources :process_types
+  resources :output_quantities
+  resources :input_quantities
+  resources :recipes
+  resources :mods
+  resources :mod_packs
+  resources :item_classes
+  resources :process_types
+  resources :output_quantities
+  resources :input_quantities
+  resources :recipes
+  resources :items
+  resources :mods
+  resources :mod_packs
+  resources :item_classes
+  resources :process_types
+  resources :output_quantities
+  resources :input_quantities
+  resources :recipes
+  resources :items
+  resources :mods
+  resources :mod_packs
+  resources :item_classes
+  resources :process_types
+  resources :output_quantities
+  resources :input_quantities
+  resources :recipes
+  resources :items
+  resources :mods
+  resources :mod_packs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
