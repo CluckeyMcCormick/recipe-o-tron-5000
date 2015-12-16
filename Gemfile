@@ -39,8 +39,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # BEGIN CUSTOM GEMS
-# Bootstrap, for da beauty
-gem 'bootstrap'
+# Bootstrap, for da beauty (bootstrap 3)
+gem 'bootstrap-sass'
 # For making forms and shid
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 # For the creation of multiple, nested forms

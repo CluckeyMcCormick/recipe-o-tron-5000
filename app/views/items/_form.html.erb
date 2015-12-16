@@ -4,7 +4,9 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :basic_item %>
-    <%= f.association :mods %>
+    <%= f.association :mod %>
+    <%= f.association :mod_pack, as: :radio_buttons %>
+    <%= f.association :item_classes, as: :check_boxes %>
   </div>
 
   <div class="form-actions">

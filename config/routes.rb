@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :recipe_inclusions
+  resources :process_type_inclusions
+  resources :item_class_inclusions
   resources :item_classes
   resources :process_types
   resources :output_quantities

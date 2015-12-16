@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Process type:</strong>
+  <%= @process_type_inclusion.process_type %>
+</p>
+
+<p>
+  <strong>Item class:</strong>
+  <%= @process_type_inclusion.item_class %>
+</p>
+
+<%= link_to 'Edit', edit_process_type_inclusion_path(@process_type_inclusion) %> |
+<%= link_to 'Back', process_type_inclusions_path %>

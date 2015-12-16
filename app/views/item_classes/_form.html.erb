@@ -3,6 +3,9 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
+    <%= f.association :mod_pack, as: :check_boxes %>
+    <%= f.association :items, as: :check_boxes %>
+    <%= f.association :process_types, as: :check_boxes %>
   </div>
 
   <div class="form-actions">

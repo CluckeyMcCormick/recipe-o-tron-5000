@@ -1,0 +1,2 @@
+module ProcessTypeInclusionsHelper
+end

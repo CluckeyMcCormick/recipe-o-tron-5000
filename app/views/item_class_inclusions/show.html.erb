@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @item_class_inclusion.item %>
+</p>
+
+<p>
+  <strong>Item class:</strong>
+  <%= @item_class_inclusion.item_class %>
+</p>
+
+<%= link_to 'Edit', edit_item_class_inclusion_path(@item_class_inclusion) %> |
+<%= link_to 'Back', item_class_inclusions_path %>

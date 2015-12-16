@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Recipe Inclusions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Process type</th>
+      <th>Recipe</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipe_inclusions.each do |recipe_inclusion| %>
+      <tr>
+        <td><%= recipe_inclusion.process_type %></td>
+        <td><%= recipe_inclusion.recipe %></td>
+        <td><%= link_to 'Show', recipe_inclusion %></td>
+        <td><%= link_to 'Edit', edit_recipe_inclusion_path(recipe_inclusion) %></td>
+        <td><%= link_to 'Destroy', recipe_inclusion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe inclusion', new_recipe_inclusion_path %>

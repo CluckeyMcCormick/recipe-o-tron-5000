@@ -1,0 +1,12 @@
+<%= simple_form_for(@recipe_inclusion) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :process_type %>
+    <%= f.association :recipe %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
