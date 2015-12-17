@@ -54,6 +54,22 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    @inputs  = InputQuantity.where(item_id: @item.id)
+    @outputs = OutputQuantity.where(item_id: @item.id)
+    @inclusions = ItemClassInclusion.where(item_id: @item.id)
+
+    @inputs.each do |input|
+      input.destroy
+    end
+
+    @outputs.each do |output|
+      output.destroy
+    end
+
+    @inclusions.each do |inclusion|
+      inclusion.destroy
+    end
+
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
@@ -69,6 +85,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :basic_item, :mod_id, :mod_pack_ids => [], :item_class_ids => [])
+      params.require(:item).permit(:name, :mod_id, :mod_pack_ids => [], :item_class_ids => [])
     end
 end

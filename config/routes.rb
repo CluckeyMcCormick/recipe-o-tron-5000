@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pack_selector/select'
+
   resources :recipe_inclusions
   resources :process_type_inclusions
   resources :item_class_inclusions

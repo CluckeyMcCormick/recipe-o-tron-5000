@@ -69,6 +69,6 @@ class OutputQuantitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def output_quantity_params
-      params.require(:output_quantity).permit(:count, :recipes_id, :items_id)
+      params.require(:output_quantity).permit(:count, :probability, :output_group, :recipe_id, :item_id)
     end
 end

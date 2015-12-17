@@ -4,7 +4,6 @@ class CreateInputQuantities < ActiveRecord::Migration
       t.integer :count
       t.references :recipe, index: true, foreign_key: true
       t.references :item, index: true, foreign_key: true
-      t.references :mod_pack, index: true, foreign_key: true
       
       t.timestamps null: false
     end

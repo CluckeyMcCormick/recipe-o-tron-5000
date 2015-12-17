@@ -54,6 +54,11 @@ class ModsController < ApplicationController
   # DELETE /mods/1
   # DELETE /mods/1.json
   def destroy
+    @itemList = Item.where(mod_id: @mod.id)
+
+    @itemList.each do |item|
+      item.destroy
+    end
     @mod.destroy
     respond_to do |format|
       format.html { redirect_to mods_url, notice: 'Mod was successfully destroyed.' }

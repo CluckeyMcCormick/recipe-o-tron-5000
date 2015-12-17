@@ -1,4 +1,7 @@
 class OutputQuantity < ActiveRecord::Base
+
+	enum output_group: [:A, :B, :C, :D, :E, :F]
+
 	belongs_to :recipe
 	belongs_to :item
 
