@@ -9,7 +9,7 @@
     <tr>
       <th>Name</th>
       <th>Basic item</th>
-      <th>Mods</th>
+      <th>Classes</th>   
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <td><%= Mod.find(item.mod).name %></td>
+        <td><%= item.item_classes.map {|x| x.to_label}.join ', ' %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

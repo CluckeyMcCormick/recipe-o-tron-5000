@@ -8,14 +8,14 @@
 
 item_name_list = [
 	'Stone', 'Dirt', 'Coarse Dirt', 'Podzol', 
-	'Grass', 'Cobblestone', 'Oak Wood Planks',
+	'Grass', 'Cobblestone', 'General Wood Planks', 'Oak Wood Planks',
 	'Spruce Wood Planks', 'Birch Wood Planks',
 	'Jungle Wood Planks', 'Acacia Wood Planks',
 	'Dark Oak Wood Planks', 'Oak Sapling', 
 	'Spruce Sapling', 'Birch Sapling', 'Jungle Sapling', 
 	'Dark Oak Sapling', 'Acacia Sapling', 'Sand', 
 	'Red Sand', 'Gravel', 'Gold Ore', 'Iron Ore', 
-	'Coal Ore', 'Oak Log', 'Spruce Log', 'Birch Log', 
+	'Coal Ore', 'General Log', 'Oak Log', 'Spruce Log', 'Birch Log', 
 	'Jungle Log', 'Dark Oak Log', 'Acacia Log', 'Oak Leaves',
 	'Spruce Leaves', 'Birch Leaves', 'Jungle Leaves',
 	'Acacia Leaves', 'Dark Oak Leaves', 'Glass', 
@@ -157,19 +157,9 @@ item_name_list = [
 	'Skeleton Head', 'Zombie Head',
 	'Creeper Head', 'Iron Horse Armor',
 	'Gold Horse Armor', 'Diamond Horse Armor',
-	'Lasso', 'Nametag', 'Sponge Block', 'Mushroom Block'
+	'Lasso', 'Nametag', 'Sponge Block', 'Mushroom Block',
 	'Hardened Clay', 'Coal Block', 'Bookshelf',
 	'Stick'
-]
-
-item_class_list = [
-	'2 x 2 Crafting Grid', '3 x 3 Crafting Grid',
-	'Furnace Fuel', 'Wool', 'Wood', 'Hoe', 'Axe',
-	'Shovel', 'Pickaxe', 'Wood-Level Pickaxe',
-	'Stone-Level Pickaxe', 'Iron-Level Pickaxe',
-	'Diamond-Level Pickaxe', 'Plantable', 'Sand',
-	'Water', 'Food', 'Fishing Pole', 'Requires Silk Touch',
-	'Dirt'
 ]
 
 process_type_names = [
@@ -194,6 +184,17 @@ process_type_descriptions = [
 	'Mining that requires at least a Stone Pickaxe.',
 	'Mining that requires at least a Iron Pickaxe,',
 	'Mining that requires at least a Diamond Pickaxe'
+]
+
+
+item_class_list = [
+	'2 x 2 Crafting Grid', '3 x 3 Crafting Grid',
+	'Furnace Fuel', 'Furnace', 'Hoe', 'Axe', 
+	'Shovel', 'Pickaxe', 'Wood-Level Pickaxe', 
+	'Stone-Level Pickaxe', 'Iron-Level Pickaxe',
+	'Diamond-Level Pickaxe', 'Plantable', 'Sand',
+	'Water', 'Food', 'Fishing Pole', 'Requires Silk Touch',
+	'Dirt'
 ]
 
 class_lists = [
@@ -225,6 +226,8 @@ class_lists = [
 		'Birch Sapling', 'Jungle Sapling', 'Dark Oak Sapling', 
 		'Acacia Sapling', 'End Stone'
 	],
+	#Furnace
+	['Furnace'],
 	# Hoe
 	['Wood Hoe', 'Stone Hoe', 'Iron Hoe', 'Gold Hoe', 'Diamond Hoe'],
 	# Axe
@@ -266,7 +269,7 @@ class_lists = [
 		'Diamond Ore', 'Redstone Ore', 'Cobweb',
 		'Ice', 'Mushroom Block', 'Podzol', 
 		'Mycelium', 'Emerald Ore', 'Nether Quartz Ore',
-		'Packed Ice' 'White Stained Glass', 'Orange Stained Glass',
+		'Packed Ice', 'White Stained Glass', 'Orange Stained Glass',
 		'Magenta Stained Glass', 'Light Blue Stained Glass',
 		'Yellow Stained Glass', 'Lime Stained Glass',
 		'Pink Stained Glass', 'Gray Stained Glass',
@@ -287,28 +290,83 @@ class_lists = [
 	['Dirt', 'Coarse Dirt', 'Podzol', 'Grass']
 ]
 
-#Make-a-da modpack
-mod_packs = ModPack.create(name: 'Vanilla 1.7')
+process_type_class_inclusions = [
+	# Inventory Crafting
+	['2 x 2 Crafting Grid'],
+	# Crafting
+	['3 x 3 Crafting Grid'],
+	# Smelting/Cooking 
+	['Furnace Fuel', 'Furnace'],
+	# Basic Agriculture
+	['Dirt', 'Water'],
+	# Tilled Agriculture
+	['Dirt', 'Water', 'Hoe'],
+	# Sand Agriculture
+	['Sand'],
+	# Fishing
+	['Fishing Pole'],
+	# Wood-Pick Level Mining
+	['Wood-Level Pickaxe'],	
+	# Stone-Pick Level Mining
+	['Stone-Level Pickaxe'],
+	# Iron-Pick Level Mining
+	['Iron-Level Pickaxe'],
+	# Diamond-Pick Level Mining
+	['Diamond-Level Pickaxe']
+]
 
+#Make-a-da modpack
+mod_pack = ModPack.create(name: 'Vanilla 1.7')
+
+#Make-a-da mod
 mod = Mod.create(name: 'Minecraft 1.7')
 
+puts "~~~~~~ Creating Items..."
 item_name_list.each do |name|
-	Item.create(name: name, mod_id: mod.id)
+	output = Item.create(name: name, mod_id: mod.id)
+	mod_pack.items << output 
 end
+puts "~~~~~~ Finished!"
 
+puts "~~~~~~ Creating Items Classes..."
 item_class_list.each do |name|
-	ItemClass.create(name: name)
+	output = ItemClass.create(name: name)
+	mod_pack.item_classes << output
 end
+puts "~~~~~~ Finished!"
 
+puts "~~~~~~ Creating Process Types..."
 process_type_names.zip(process_type_descriptions).each do |n, d|
-	ProcessType.create(name: n, description: d)
+	output = ProcessType.create(name: n, description: d)
+	mod_pack.process_types << output
 end
+puts "~~~~~~ Finished!"
 
-class_lists.zip(item_class_list) do | class_name, item_list |
-	class_id = ItemClass.where(name: class_name).id
-	
+puts "Creating Item Class Inclusions..."
+class_lists.zip(item_class_list).each do | item_list, class_name |
+	puts class_name
+	class_id = ItemClass.where(name: class_name).take.id
+
 	item_list.each do |item_name|
-		item_id = Item.where(name: item_name).id
-		ItemClassInclusion.create(item_id: item_id, item_class_id: class_id)
+		item_id = Item.where(name: item_name).take.id
+		output = ItemClassInclusion.create(item_id: item_id, item_class_id: class_id)
+		mod_pack.item_class_inclusions << output
 	end
 end
+puts "~~~~~~ Finished!"
+
+puts "~~~~~~ Creating Process Type Inclusions..."
+process_type_names.zip(process_type_class_inclusions).each do |proc_name, inclusion_list|
+	puts proc_name
+	proc_id = ProcessType.where(name: proc_name).take.id
+
+	inclusion_list.each do |item_class_name|
+		class_id = ItemClass.where(name: item_class_name).take.id
+		output = ProcessTypeInclusion.create(process_type_id: proc_id, item_class_id: class_id)
+		mod_pack.process_type_inclusions << output
+	end
+end	
+puts "~~~~~~ Finished!"
+
+puts "~~~~~~ Creating Recipes - including I/O Quantities and Recipe Inclusions"
+puts "~~~~~~ Finished!"

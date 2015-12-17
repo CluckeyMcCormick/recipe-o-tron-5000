@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(version: 20151216011854) do
   add_index "recipe_inclusions", ["recipe_id"], name: "index_recipe_inclusions_on_recipe_id"
 
   create_table "recipes", force: :cascade do |t|
+    t.integer  "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
