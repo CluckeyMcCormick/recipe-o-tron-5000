@@ -1,63 +1,12 @@
 Rails.application.routes.draw do
-  get 'pack_selector/select'
 
-  resources :recipe_inclusions
-  resources :process_type_inclusions
-  resources :item_class_inclusions
-  resources :item_classes
-  resources :process_types
   resources :output_quantities
   resources :input_quantities
   resources :recipes
   resources :items
   resources :mods
   resources :mod_packs
-  resources :item_classes
-  resources :process_types
-  resources :output_quantities
-  resources :input_quantities
-  resources :recipes
-  resources :items
-  resources :mods
-  resources :mod_packs
-  resources :item_classes
-  resources :process_types
-  resources :output_quantities
-  resources :input_quantities
-  resources :recipes
-  resources :mods
-  resources :mod_packs
-  resources :item_classes
-  resources :process_types
-  resources :output_quantities
-  resources :input_quantities
-  resources :recipes
-  resources :mods
-  resources :mod_packs
-  resources :item_classes
-  resources :process_types
-  resources :output_quantities
-  resources :input_quantities
-  resources :recipes
-  resources :items
-  resources :mods
-  resources :mod_packs
-  resources :item_classes
-  resources :process_types
-  resources :output_quantities
-  resources :input_quantities
-  resources :recipes
-  resources :items
-  resources :mods
-  resources :mod_packs
-  resources :item_classes
-  resources :process_types
-  resources :output_quantities
-  resources :input_quantities
-  resources :recipes
-  resources :items
-  resources :mods
-  resources :mod_packs
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

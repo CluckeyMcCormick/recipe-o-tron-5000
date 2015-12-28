@@ -1,9 +1,63 @@
-<%= render 'shared/nbar' %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RECIPE-O-TRON 5000</title>
+</head>
+<body>
+	<%= render 'shared/nbar' %>
 
-<p id="notice"><%= notice %></p>
+	<div class="container">
+		<p id="notice"><%= notice %></p>
 
-<h1>Hello World</h1>
+		<h1>Welcome to the RECIPE-O-TRON 5000!</h1>
 
-<p>
-  The time is now: <%= Time.now %>
-</p>
+		<p>
+		This webapp exists in order to ease Minecraft recipe calculations.
+		<br>
+		<br>
+		To use the recipe calculator, just go to the "Calculator" section.
+		<br>
+		<br>
+		All information on this website has been added by the users.
+		<br>
+		<br>
+		Any information you want to add can be created by going to the
+		relevant tabs. The tabs themselves are tool-tipped with relevant
+		information about these things. Just in case you can't view those
+		for whatever reason, here's the tooltips:
+		<br>
+		<br>
+		Modpacks: Collections of mods.
+		<br>
+		Mods: The mods themselves - just names, more or less.
+		<br>
+		Items: The items that we will be calculating. Each item
+		will need a mod to belong to. Each item may also belong
+		to one or more item classes.
+		<br>
+		Item Classes: The broad classes/attributes items may
+		have. Hopefully as relevant as possible. Some examples
+		may be "fuel", "flower", "furnace", etc.
+		<br>
+		Process Types: Used to describe a process in-game, like
+		smelting. Can have several item classes to describe what 
+		components you'll need - continuing the smelting example,
+		you'd need a "furnace" and some "fuel".
+		<br>
+		Recipes: The big shabang.
+		<br>
+		<br>
+		If there is some information you want to add - need to add - here's
+		my suggestion: start by creating the mods. Go to the "Mods" section,
+		and see whats there. We would prefer it if major versions of mods are
+		separated, i.e. "Minecraft 1.8 and 1.7"
+
+		you'll need to go to the "Choose a Modpack" section. If you don't see the
+		modpack you want, you'll have to go the "View Modpacks" section, and
+		create a new modpack.
+
+
+		</p>
+	</div>
+</body>
+</html>

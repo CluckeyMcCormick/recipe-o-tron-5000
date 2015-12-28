@@ -17,7 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@media (max-width: 991px) {
+@media (max-width: 1201px) {
     .navbar-header {
         float: none;
     }
@@ -53,3 +53,5 @@
   		display:block !important;
 	}
 }
+
+body { padding-top: 70px; }

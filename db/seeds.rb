@@ -162,159 +162,6 @@ item_name_list = [
 	'Stick'
 ]
 
-process_type_names = [
-	'Inventory Crafting', 'Crafting',
-	'Smelting/Cooking', 'Basic Agriculture',
-	'Tilled Agriculture', 'Sand Agriculture', 
-	'Fishing', 'Wood-Pick Level Mining',
-	'Stone-Pick Level Mining',
-	'Iron-Pick Level Mining',
-	'Diamond-Pick Level Mining'
-]
-
-process_type_descriptions = [
-	'Crafting using your inventory.',
-	'Crafting using an external block of some kind.',
-	'Melting/Cooking down one item into another item.',
-	'Agriculture where the plant only needs to be planted - no extra fuss.',
-	'Agriculture requiring a little more effort on your part.',
-	'Agriculture without water - just sand.',
-	'Fishing things out of the water the old way.',
-	'Mining that requires at least a Wood Pickaxe.',
-	'Mining that requires at least a Stone Pickaxe.',
-	'Mining that requires at least a Iron Pickaxe,',
-	'Mining that requires at least a Diamond Pickaxe'
-]
-
-
-item_class_list = [
-	'2 x 2 Crafting Grid', '3 x 3 Crafting Grid',
-	'Furnace Fuel', 'Furnace', 'Hoe', 'Axe', 
-	'Shovel', 'Pickaxe', 'Wood-Level Pickaxe', 
-	'Stone-Level Pickaxe', 'Iron-Level Pickaxe',
-	'Diamond-Level Pickaxe', 'Plantable', 'Sand',
-	'Water', 'Food', 'Fishing Pole', 'Requires Silk Touch',
-	'Dirt'
-]
-
-class_lists = [
-	# 2 x 2 Crafting Grid
-	['Crafting Bench'],
-	# 3 x 3 Crafting Grid
-	['Crafting Bench'],
-	# Furnace Fuel
-	[
-		'Lava Bucket', 'Coal Block', 'Blaze Rod',
-		'Coal', 'Charcoal', 'Oak Log',
-		'Spruce Log', 'Birch Log', 'Jungle Log',
-		'Dark Oak Log', 'Acacia Log', 'Oak Wood Planks',
-		'Spruce Wood Planks', 'Birch Wood Planks',
-		'Jungle Wood Planks', 'Acacia Wood Planks',
-		'Dark Oak Wood Planks', 'Wood Pressure Pad',
-		'Fence', 'Fence Gate', 'Oak Wood Stairs', 
-		'Spruce Wood Stairs', 'Birch Wood Stairs', 
-		'Jungle Wood Stairs', 'Dark Oak Wood Stairs', 
-		'Acacia Wood Stairs', 'Wooden Trapdoor',
-		'Crafting Bench', 'Bookshelf', 'Chest', 
-		'Trapped Chest', 'Daylight Sensor', 'Jukebox',
-		'Note Block', 'Mushroom Block', 'Wood Shovel', 
-		'Wood Pickaxe', 'Wood Axe', 'Wood Hoe', 
-		'Wood Sword',  'Oak Wood Slab', 'Spruce Wood Slab',
-		'Birch Wood Slab', 'Jungle Wood Slab', 
-		'Dark Oak Wood Slab', 'Acacia Wood Slab',
-		'Stick', 'Oak Sapling', 'Spruce Sapling', 
-		'Birch Sapling', 'Jungle Sapling', 'Dark Oak Sapling', 
-		'Acacia Sapling', 'End Stone'
-	],
-	#Furnace
-	['Furnace'],
-	# Hoe
-	['Wood Hoe', 'Stone Hoe', 'Iron Hoe', 'Gold Hoe', 'Diamond Hoe'],
-	# Axe
-	['Wood Axe', 'Stone Axe', 'Iron Axe', 'Gold Axe', 'Diamond Axe'],
-	# Shovel
-	['Wood Shovel', 'Stone Shovel', 'Iron Shovel', 'Gold Shovel', 'Diamond Shovel'],
-	# Pickaxe
-	['Wood Pickaxe', 'Stone Pickaxe', 'Iron Pickaxe', 'Gold Pickaxe', 'Diamond Pickaxe'],
-	# Wood-Level Pickaxe
-	['Wood Pickaxe', 'Stone Pickaxe', 'Iron Pickaxe', 'Diamond Pickaxe'],
-	# Stone-Level Pickaxe
-	['Stone Pickaxe', 'Iron Pickaxe', 'Diamond Pickaxe'],
-	# Iron-Level Pickaxe
-	['Iron Pickaxe', 'Diamond Pickaxe'],
-	# Diamond-Level Pickaxe
-	['Diamond Pickaxe'],
-	# Plantable
-	['Seeds', 'Carrot', 'Potato', 'Pumpkin Seeds', 'Melon Seeds' ],
-	# Sand
-	['Sand', 'Red Sand' ],
-	# Water 
-	['Water Bucket'],
-	# Food
-	[
-		'Bread', 'Apple', 'Golden Apple',
-		'Porkchop', 'Cooked Porkchop', 'Beef', 
-		'Cooked Beef', 'Chicken', 'Cooked Chicken', 
-		'Zombie Flesh', 'Cookie', 'Cake',
-		'Cooked Fish', 'Cooked Salmon', 
-		'Pumpkin Pie', 'Spider Eye',
-		'Mushroom Soup', 'Fish', 'Salmon', 
-		'Clownfish', 'Pufferfish'
-	],
-	# Fishing Pole
-	['Fishing Pole'],
-	# Requires Silk Touch
-	[
-		'Stone', 'Coal Ore', 'Lapis Lazui Ore', 
-		'Diamond Ore', 'Redstone Ore', 'Cobweb',
-		'Ice', 'Mushroom Block', 'Podzol', 
-		'Mycelium', 'Emerald Ore', 'Nether Quartz Ore',
-		'Packed Ice', 'White Stained Glass', 'Orange Stained Glass',
-		'Magenta Stained Glass', 'Light Blue Stained Glass',
-		'Yellow Stained Glass', 'Lime Stained Glass',
-		'Pink Stained Glass', 'Gray Stained Glass',
-		'Light Gray Stained Glass', 'Cyan Stained Glass',
-		'Purple Stained Glass', 'Blue Stained Glass',
-		'Brown Stained Glass', 'Green Stained Glass',
-		'Red Stained Glass', 'Black Stained Glass',
-		'White Stained Glass', 'Orange Stained Glass Pane', 
-		'Magenta Stained Glass Pane', 'Light Blue Stained Glass Pane', 
-		'Yellow Stained Glass Pane', 'Lime Stained Glass Pane', 
-		'Pink Stained Glass Pane', 'Gray Stained Glass Pane', 
-		'Light Gray Stained Glass Pane', 'Cyan Stained Glass Pane', 
-		'Purple Stained Glass Pane', 'Blue Stained Glass Pane', 
-		'Brown Stained Glass Pane', 'Green Stained Glass Pane', 
-		'Red Stained Glass Pane', 'Black Stained Glass Pane'
-	],
-	# Dirt
-	['Dirt', 'Coarse Dirt', 'Podzol', 'Grass']
-]
-
-process_type_class_inclusions = [
-	# Inventory Crafting
-	['2 x 2 Crafting Grid'],
-	# Crafting
-	['3 x 3 Crafting Grid'],
-	# Smelting/Cooking 
-	['Furnace Fuel', 'Furnace'],
-	# Basic Agriculture
-	['Dirt', 'Water'],
-	# Tilled Agriculture
-	['Dirt', 'Water', 'Hoe'],
-	# Sand Agriculture
-	['Sand'],
-	# Fishing
-	['Fishing Pole'],
-	# Wood-Pick Level Mining
-	['Wood-Level Pickaxe'],	
-	# Stone-Pick Level Mining
-	['Stone-Level Pickaxe'],
-	# Iron-Pick Level Mining
-	['Iron-Level Pickaxe'],
-	# Diamond-Pick Level Mining
-	['Diamond-Level Pickaxe']
-]
-
 #Make-a-da modpack
 mod_pack = ModPack.create(name: 'Vanilla 1.7')
 
@@ -323,50 +170,15 @@ mod = Mod.create(name: 'Minecraft 1.7')
 
 puts "~~~~~~ Creating Items..."
 item_name_list.each do |name|
+	print name
+	print ", "
+	$stdout.flush
 	output = Item.create(name: name, mod_id: mod.id)
-	mod_pack.items << output 
+	mod_pack.items << output
 end
+puts
 puts "~~~~~~ Finished!"
-
-puts "~~~~~~ Creating Items Classes..."
-item_class_list.each do |name|
-	output = ItemClass.create(name: name)
-	mod_pack.item_classes << output
-end
-puts "~~~~~~ Finished!"
-
-puts "~~~~~~ Creating Process Types..."
-process_type_names.zip(process_type_descriptions).each do |n, d|
-	output = ProcessType.create(name: n, description: d)
-	mod_pack.process_types << output
-end
-puts "~~~~~~ Finished!"
-
-puts "Creating Item Class Inclusions..."
-class_lists.zip(item_class_list).each do | item_list, class_name |
-	puts class_name
-	class_id = ItemClass.where(name: class_name).take.id
-
-	item_list.each do |item_name|
-		item_id = Item.where(name: item_name).take.id
-		output = ItemClassInclusion.create(item_id: item_id, item_class_id: class_id)
-		mod_pack.item_class_inclusions << output
-	end
-end
-puts "~~~~~~ Finished!"
-
-puts "~~~~~~ Creating Process Type Inclusions..."
-process_type_names.zip(process_type_class_inclusions).each do |proc_name, inclusion_list|
-	puts proc_name
-	proc_id = ProcessType.where(name: proc_name).take.id
-
-	inclusion_list.each do |item_class_name|
-		class_id = ItemClass.where(name: item_class_name).take.id
-		output = ProcessTypeInclusion.create(process_type_id: proc_id, item_class_id: class_id)
-		mod_pack.process_type_inclusions << output
-	end
-end	
-puts "~~~~~~ Finished!"
-
+puts
 puts "~~~~~~ Creating Recipes - including I/O Quantities and Recipe Inclusions"
+puts "Yeah haven't done anything here yet. Sorry M8."
 puts "~~~~~~ Finished!"
