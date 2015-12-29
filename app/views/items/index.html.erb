@@ -1,32 +1,68 @@
 <%= render 'shared/nbar' %>
 
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Items</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Basic item</th>
-      <th>Classes</th>   
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= item.mod.to_label %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<body>
+  <div class = "container">
+    <p id="notice"><%= notice %></p>
+    <%= form_tag items_path, :method => 'get' do %> 
+      <p>
+        <%= text_field_tag :search, params[:search], class: 'input-large', placeholder: "Search Term" %>
+        <%= 
+          select_tag :mod_id, 
+          options_from_collection_for_select(Mod.all, :id, :name), 
+          prompt: "Select A Mod" 
+        %>
+        <%= button_tag "Search Items", type: "submit", :class => "btn btn-default", :name => nil %>
+      </p>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <h1>Items</h1>
+    <div class = "container">
+      <% unless @items.nil? %>
+        <% if @items.any? %>  
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Mod</th>  
+                <th colspan="3"></th>
+              </tr>
+            </thead>
 
-<%= link_to 'New Item', new_item_path %>
+            <tbody>
+              <% @items.each do |item| %>
+                <tr>
+                  <td><%= item.name %></td>
+                  <td><%= item.mod.to_label %></td>
+                  <td><%= link_to 'Show', item %></td>
+                  <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                  <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <p>
+            The search returned no results. Sorry M80!
+          </p> 
+        <% end %>
+      <% else %>
+        <p>
+          For sanity/performance reasons, you must
+          first search for items before you can see items.
+          <br>
+          <br>
+          Leaving a field blank means that field won't be checked against.
+          <br>
+          <br>
+          So, if you don't use a search term, but select a mod, you'll get all the items for the mod.
+          <br>
+          And if you just search a term, without using a mod, you'll get all the matching items.
+          <br>
+          Leaving both blank will retrieve <strong>all</strong> items. Please don't - for your sake.
+        </p>
+      <% end %>
+    </div>
+    <br>
+    <%= link_to 'New Item', new_item_path %>
+  </div>
+</body>

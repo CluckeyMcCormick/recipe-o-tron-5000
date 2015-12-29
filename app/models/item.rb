@@ -12,4 +12,16 @@ class Item < ActiveRecord::Base
 	def to_label
 	"#{name}"
 	end
+
+	def self.search(search, mod_id)
+		if search
+			unless mod_id == ""
+	    		where('name LIKE ? AND mod_id = ?', "%#{search}%", "#{mod_id}")
+	    	else
+	    		where('name LIKE ?', "%#{search}%")
+	    	end
+	    else
+	    	nil
+	    end
+	end
 end

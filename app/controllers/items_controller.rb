@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.search(params[:search], params[:mod_id])
   end
 
   # GET /items/1
